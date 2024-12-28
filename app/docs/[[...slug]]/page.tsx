@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { source } from '@/lib/source';
 import {
   DocsPage,
