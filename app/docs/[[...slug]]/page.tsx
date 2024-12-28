@@ -1,3 +1,7 @@
+export const runtime = 'edge';
+export const dynamic = 'auto';
+export const dynamicParams = true;
+
 import { source } from '@/lib/source';
 import {
   DocsPage,
@@ -7,9 +11,6 @@ import {
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
-
-export const preferredRegion = 'auto';
-export const dynamic = 'force-dynamic';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
