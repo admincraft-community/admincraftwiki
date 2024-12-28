@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@types/mdx": "^2.0.13",
+    "pnpm": "^8.7.1",
     "@types/node": "22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
