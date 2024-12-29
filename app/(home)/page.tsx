@@ -86,10 +86,10 @@ export default function HomePage() {
               </p>
               <div className="flex justify-center gap-4">
                 <Button size="lg" asChild>
-                  <Link href="/docs">Browse Documentation</Link>
+                  <Link href="/docs/getting_started/overview">Browse Documentation</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="/docs/contribution">Contribute</Link>
+                  <Link href="/docs/getting_started/contribution">Contribute</Link>
                 </Button>
               </div>
             </div>
