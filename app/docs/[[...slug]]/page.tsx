@@ -7,6 +7,14 @@ import {
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { FolderIcon, FileIcon, MessageCircleIcon, UsersIcon, LifeBuoyIcon, GitPullRequestIcon, ShieldIcon } from 'lucide-react';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { TypeTable } from '@/components/tyep-table-auto';
+
 
 export const runtime = 'edge';
 export const dynamic = 'auto';
@@ -56,7 +64,25 @@ export default async function Page(props: {
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <MDX components={{ ...defaultMdxComponents }} />
+        <MDX components={{ 
+          ...defaultMdxComponents,
+          Callout,
+          Steps,
+          Tabs,
+          Card,
+          Cards,
+          Tab,
+          Accordion,
+          TypeTable,
+          Accordions,
+          LifeBuoyIcon,
+          ShieldIcon,
+          FolderIcon,
+          FileIcon,
+          MessageCircleIcon,
+          UsersIcon,
+          GitPullRequestIcon
+        }} />
       </DocsBody>
     </DocsPage>
   );
