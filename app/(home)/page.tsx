@@ -139,7 +139,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white/50 dark:bg-slate-800/50">
                 <CardHeader>
-                  <CardTitle className="text-4xl font-bold text-primary">25K+</CardTitle>
+                  <CardTitle className="text-4xl font-bold text-primary">12K+</CardTitle>
                   <CardDescription>Discord Members</CardDescription>
                 </CardHeader>
               </Card>
