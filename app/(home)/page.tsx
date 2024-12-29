@@ -13,6 +13,12 @@ import {
   Crosshair1Icon,
   QuestionMarkCircledIcon
 } from '@radix-ui/react-icons';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Admincraft Wiki - Minecraft Server Administration Guide',
+  description: 'Your comprehensive guide to Minecraft server administration, built by the community for the community.',
+};
 
 export default function HomePage() {
   const mainFeatures = [
