@@ -4,6 +4,8 @@ description: A comprehensive guide to contributing to our documentation
 icon: HomeIcon
 ---
 
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
 # How to Contribute
 
 Welcome to our contribution guide! This comprehensive document will walk you through everything you need to know about contributing to our documentation, from setup to submission.
@@ -15,12 +17,29 @@ Before starting your contribution journey, please familiarize yourself with our 
 ## Quick Start Guide
 
 <Steps>
-1. Fork the repository from [admincraft-community/admincraftwiki](https://github.com/admincraft-community/admincraftwiki)
-2. Clone your fork: `git clone https://github.com/YOUR-USERNAME/admincraftwiki.git`
-3. Create a new branch: `git checkout -b feature/your-feature-name`
-4. Make your changes following our documentation guidelines
-5. Test your changes locally
-6. Submit a pull request with a clear description of your changes
+  <Step>
+  Fork the repository from [admincraft-community/admincraftwiki](https://github.com/admincraft-community/admincraftwiki)
+  </Step>
+
+  <Step>
+  Clone your fork: `git clone https://github.com/YOUR-USERNAME/admincraftwiki.git`
+  </Step>
+
+  <Step>
+  Create a new branch: `git checkout -b feature/your-feature-name`
+  </Step>
+
+  <Step>
+  Make your changes following our documentation guidelines
+  </Step>
+
+  <Step>
+  Test your changes locally
+  </Step>
+
+  <Step>
+  Submit a pull request with a clear description of your changes
+  </Step>
 </Steps>
 
 ## Development Environment Setup
@@ -145,12 +164,18 @@ import { InlineTOC } from '@/components/ui/inline-toc'
 Create guided tutorials:
 
 ```mdx
-import { Steps } from '@/components/ui/steps'
+import { Steps, Step } from '@/components/ui/steps'
 
 <Steps>
-1. First step description
-2. Second step description
-3. Third step description
+  <Step>
+    First step description
+  </Step>
+  <Step>
+    Second step description
+  </Step>
+  <Step>
+    Third step description
+  </Step>
 </Steps>
 ```
 
