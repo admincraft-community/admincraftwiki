@@ -1,0 +1,222 @@
+---
+title: Server Software
+description: A detailed guide on which server software is right for you
+---
+
+import { Card, Cards } from "fumadocs-ui/components/card";
+
+# Introduction
+
+Everybody has different requirements when setting up their server. This guide will help you decide which server software is right for you.
+Each server software has its own uses and features, so it's important to choose the right one for your needs.
+
+<Callout type="info" title="Note">
+  Server Software(s) are commonly referred to as "Server Jar(s)". This is
+  because server softwares are usually distributed as a `.jar` file.
+</Callout>
+
+# Backend Servers
+
+Backend servers are the most common type of server software.
+There are an incomprehensible amount of backend servers available, however this section will cover the most recommended, stable and widely-used softwares.
+
+<Callout type="info" title="Note">
+  A "fork" is a copy of a software project that is modified in some way.\
+  They typically share the same codebase but have modified (or additional) features and optimizations.\
+  An example of "forks" include: Bukkit -> CraftBukkit -> Spigot -> Paper -> Pufferfish -> etc.
+</Callout>
+
+## Vanilla
+
+Vanilla is the official server software for Minecraft. As the name implies, it is the most basic server software available and has no modifications whatsoever.\
+It is ideal for those who wish to host a small server for a couple of friends or family, **without** altering any mechanics.\
+This server software is **not** recommended for larger servers.
+
+<Card href="https://jar.setup.md/download/vanilla/latest" title="Download">
+  Download a copy of the latest Vanilla server software via jar.setup.md.
+</Card>
+
+## Paper
+
+[Paper](https://papermc.io/) is arguably the most widely used server software today. It is a fork of the Spigot project (with its own API), featuring **numerous optimizations** alongside numerous bug fixes, making it the main choice for many aspiring server owners.
+
+Additionally, it has support for plugins which bring new features, QOL improvements and other enhancements to the game.\
+You can find plugins on platforms such as [SpigotMC](https://www.spigotmc.org/resources/categories/spigot.4/), [Modrinth](https://modrinth.com/plugins), [Hangar](https://hangar.papermc.io/), etc.
+
+<Callout type="warn" title="Warning">
+  While Paper features many optimizations and features, many of these affect vanilla gameplay mechanics.\
+  This makes it unsuitable for servers that wish to maintain a vanilla experience or those who make complex farms that utilize intricate vanilla mechanics.
+</Callout>
+
+<Card href="https://jar.setup.md/download/paper/latest/latest" title="Download">
+  Download a copy of the latest PaperMC server software via
+  [jar.setup.md](https://jar.setup.md/).
+</Card>
+
+## Pufferfish (recommended)
+
+Pufferfish is a [fork](#backend-servers) of [Paper](#paper) that adds significant optimizations to the game without much impact to normal gameplay.\
+These optimizations include entity, hopper, SIMD and other performance improvements.\
+This is highly recommended for all servers due to the significant performance improvements it brings, without affecting plugin compatibility.
+
+<Card href="https://pufferfish.host/downloads" title="Download">
+  Download a copy of the latest Pufferfish server software via pufferfish.host.\
+  **Do not attempt to use Pufferfish+ or Pufferfish+ (Purpur). This is a paid
+  server software and is mostly used only by the customers of Pufferfish Host
+  itself**.
+</Card>
+
+## Purpur
+
+[Purpur](https://purpurmc.org/) is another fork of Paper that adds additional configuration concerning different mechanics of the game, removing the need to download or create additional plugins.\
+It also features some performance patches from [Pufferfish](#pufferfish-recommended).
+It is recommended to use Pufferfish over Purpur, unless you require the additional features and configuration that Purpur provides.
+
+<Card
+  href="https://jar.setup.md/download/purpur/latest/latest"
+  title="Download">
+  Download a copy of the latest Purpur server software via
+  [jar.setup.md](https://jar.setup.md/).
+</Card>
+
+## Folia
+
+[Folia](https://papermc.io/software/folia) is a fork of Paper that splits the worlds up into "regions" which all run relatively independently.\
+Each region features its own tick loop (ticking at Minecraft's regular 20TPS), running on a thread pool in parallel.\
+This allows for better performance on servers with many players and entities, who are spread far out.
+
+Folia was created because Minecraft is single-threaded, meaning it cannot take advantage of all of your CPU, and instead can only use a small portion of it.\
+Softwares such as Paper already help to alleviate this issue, but Folia takes it a step further by splitting the world up into regions.
+
+<Callout type="warn" title="Warning">
+    **Folia is not completely usable!**\
+    You must consider whether you need to use it. Folia is not completely stable yet, although it is stable enough to be used in production, one famous example being 2b2t.\
+    You must be prepared to deal with bugs and issues and a high hardware requirement of a (recommended) minimum of 16 CPU cores.
+    Consider using other (more stable) softwares such as [Pufferfish](#pufferfish-recommended) or [Purpur](#purpur) beforehand.
+
+    **Ensure you thoroughly test every feature, command and mechanic in your server while using this software.**
+
+    Additionally, **Folia does not fix lag**, and requires a very specific playerbase where everyone is spread out relatively far.
+    If your players are not spread out then there will be more entities in each region, which will cause more lag, making the experience identical if not worse than using a software such as Paper.
+
+</Callout>
+
+<Card href="https://jar.setup.md/download/folia/latest/latest" title="Download">
+  Download a copy of the latest Folia server software via
+  [jar.setup.md](https://jar.setup.md/).
+</Card>
+
+## MultiPaper
+
+[MultiPaper](https://github.com/MultiPaper/MultiPaper) is a 1.20.1 fork of [Purpur](#purpur) that splits your world(s) into multiple servers, running independently.\
+Each world is split into regions (similar to Folia), and each region runs on its own server.\
+This server software is often known as "sharding", where each server is a "shard".\
+Each server communicates with each other and is able to transfer players between servers, allowing for a seamless experience.
+
+<Callout type="warn" title="Warning">
+    **MultiPaper is highly unstable!**\
+    You must consider whether you need to use it. MultiPaper is notorious for being unstable and is not recommended for production use.\
+    Although many public servers such as DonutSMP use a sharding solution, they are often custom-made and are not available to the public.
+
+    Consider using / testing other (more stable) softwares such as [Pufferfish](#pufferfish-recommended) or [Purpur](#purpur) beforehand.
+    **Ensure you thoroughly test every feature, command and mechanic in your server if you decide to use this software.**
+</Callout>
+
+<Card href="https://multipaper.io/download.html" title="Download">
+  Download a jarfile for MultiPaper here.
+</Card>
+
+## 1.8 Softwares
+There are some spigot or paper forks that are actively maintained for 1.8.x.\
+We would recommend against using 1.8 or arguably any version below latest, due to the presence of security vulnerabilities or other exploits.\
+One of the main reasons for choosing to run a 1.8.x fork is for good performance on older hardware, or for pre-1.9 PvP.\
+See below for some 1.8.x forks that are actively maintained:
+
+<Cards>
+    <Card href="https://github.com/hpfxd/PandaSpigot" title = "PandaSpigot"></Card>
+    <Card href="https://github.com/Wind-Development/WindSpigot" title = "WindSpigot"></Card>
+    <Card href="https://github.com/CobbleSword/NachoSpigot" title = "NachoSpigot"></Card>
+</Cards>
+
+## Forge
+Forge is a modded server (and API) that allows for the use of mods on your server, which can add new content, mechanics and features to the game (Unlike Vanilla, Spigot, Paper, etc).\
+Unlike Paper, it contains **no optimizations** and is often very laggy when on larger modpacks.
+
+<Card href="https://files.minecraftforge.net/net/minecraftforge/forge/" title="Download">
+  Download a copy of Forge via [minecraftforge.net](https://files.minecraftforge.net/net/minecraftforge/forge/).
+</Card>
+
+## NeoForge
+NeoForge is a fork of Forge, maintained by most of the original Forge development team - excluding LexManos (see [this post](https://neoforged.net/news/theproject/)).\
+It aims to fix the issues surrounding the community and provide a better development experience for modders and more recent versions of Minecraft itself.
+
+<Callout type="info" title="Note">
+  Due to NeoForge being a relatively new server software, there is not as many mods that completely support it compared to the likes of Forge and Fabric.
+  However, many mods are slowly being updated to support NeoForge, and many popular modpacks exist for it.
+</Callout>
+
+<Card href="https://neoforged.net/" title="Download">
+  Download a copy of the latest NeoForge server software via [neoforged.net](https://neoforged.net/).
+</Card>
+
+## Fabric
+Similar to Forge and NeoForge, Fabric is a modded server software (and API). Like Forge & NeoForge, it allows you to add new content (such as mobs, biomes, generation etc) to the game with ease.\
+It is known for being more lightweight with a more extensive array of performance mods compared to Forge, such as Lithium, Moonrise, Starlight, etc.
+
+<Card href="https://fabricmc.net/use/installer/" title="Download">
+  Download a copy of the latest Fabric server software (installer) via [fabricmc.net](https://fabricmc.net/use/installer/).
+</Card>
+<br></br>
+
+# Proxy Servers
+Proxies are server softwares that allow you to connect multiple servers together, making it more seamless for switching between servers / gamemodes.\
+These are known as **"networks"**.\
+Proxies are also incredibly lightweight, with small CPU and RAM usage (typically less than 1-2GB of RAM) however this can vary depending on your player count and proxy plugins.
+
+## Velocity (recommended)
+[Velocity](https://papermc.io/software/velocity) is a modern, high-performance, and extremely flexible Minecraft proxy, maintained by the [PaperMC Team](https://papermc.io/).
+It is relatively new, but has quickly become the most popular proxy server software due to its performance and flexibility.
+
+<Callout type="info" title="Note">
+    Velocity makes use of its own API, meaning all Bungeecord plugins do **not** function on Velocity, although there are workaround plugins that introduce some degree of compatibility between the two plugin platforms.\
+    One example of this is [Snap](https://hangar.papermc.io/Phoenix616/Snap).<br></br>
+
+    Ultimately Velocity is a far more modern and superior proxy software compared to Waterfall and Bungeecord, unless you make use of plugins that only have Bungeecord support.
+</Callout>
+
+<Card href="https://jar.setup.md/download/velocity/latest/latest" title="Download">
+  Download a copy of the latest Velocity proxy software via [jar.setup.md](https://jar.setup.md/).
+</Card>
+
+## Velocity-CTD
+[Velocity-CTD](https://github.com/GemstoneGG/Velocity-CTD) is a fork of [Velocity](#velocity-recommended) that adds additional features and optimizations to the software.\
+It is fully open source and adds Quality of Life commands and more support for backend server softwares - particularly modded servers which are notoriously difficult when within a network.
+
+Installing Velocity-CTD is as simple as replacing the normal Velocity jarfile with the new Velocity-CTD one.
+
+<Card href="https://github.com/GemstoneGG/Velocity-CTD/releases/latest" title="Download">
+  Download a copy of the latest Velocity-CTD proxy software via [github.com](https://github.com/).
+</Card>
+
+## Bungeecord
+[Bungeecord](https://www.spigotmc.org/wiki/bungeecord/) is a "legacy" proxy server software that is still widely used today.\
+Like all other proxy softwares, it allows individual backend servers to be connected together allowing for easy transfer between servers.\
+However, Bungeecord is not as performant as Velocity and their API is not as extensive as Velocity's, although many plugin developers still support it.
+
+<Card href="https://ci.md-5.net/job/BungeeCord/" title="Download">
+  Download a copy of the latest Bungeecord proxy software via [ci.md-5.net](https://ci.md-5.net/).
+</Card>
+
+## Waterfall
+[Waterfall](https://papermc.io/software/waterfall) is a fork of Bungeecord that aims to improve performance and stability, focusing on Stability, Features and Scalability.
+
+<Callout type="warn" title="Warning">
+  The PaperMC development team have announced that Waterfall is no longer maintained and is EOL.\
+  They strongly recommend that you use Velocity instead of Waterfall, see their [announcement](https://forums.papermc.io/threads/announcing-the-end-of-life-of-waterfall.1088/) for more information.
+</Callout>
+
+<Card href="https://jar.smd.gg/download/waterfall/latest/latest" title="Download">
+  Download a copy of the latest Waterfall proxy software via [jar.setup.md](https://jar.setup.md/).
+</Card>
+
+## TODO - TALK ABOUT NON-JAVA-BASED SOFTWARES SUCH AS PUMPKIN, VALENCE, ETC
