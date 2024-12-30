@@ -27,21 +27,28 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
       - name: Setup pnpm cache
         uses: actions/cache@v3
         with:
-          path: ${{ env.STORE_PATH }}
+          path: ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - name: Debug Directory
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          echo "Lock file contents (if exists):"
+          cat pnpm-lock.yaml || echo "Lock file not found"
+
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: |
+          echo "Using pnpm version:"
+          pnpm --version
+          pnpm install --no-frozen-lockfile
         
       - name: Build Next.js App
         run: pnpm build
