@@ -141,7 +141,7 @@ It is recommended to use Pufferfish over Purpur, unless you require the addition
 Each region features its own tick loop (ticking at Minecraft's regular 20TPS), running on a thread pool in parallel.\
 This allows for better performance on servers with many players and entities, who are spread far out.
 
-Folia was created because Minecraft is single-threaded, meaning it cannot take advantage of all of your CPU, and instead can only use a small portion of it.\
+Folia was created because Minecraft's tick loop is single-threaded - The majority of processing is done on this tick loop, with a few exceptions such as Netty which handles networking - meaning it cannot take advantage of all of your CPU, and instead can only use a small portion of it.\
 Software such as Paper already help to alleviate this issue, but Folia takes it a step further by splitting the world up into regions.
 
 <Callout type="warn" title="Warning">
