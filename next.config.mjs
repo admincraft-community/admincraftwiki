@@ -5,7 +5,7 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-  webpack: (config, { dev}) => {
+  webpack: (config, { dev }) => {
     if (!dev) {
       config.optimization = {
         ...config.optimization,
@@ -13,24 +13,38 @@ const config = {
         chunkIds: 'deterministic',
         splitChunks: {
           chunks: 'all',
+          maxInitialRequests: 25,
           minSize: 20000,
-          maxSize: 20000000, // 20MB, safely under Cloudflare's 25MB limit
+          maxSize: 20000000, 
           cacheGroups: {
-            vendor: {
+            default: false,
+            vendors: false,
+            framework: {
+              chunks: 'all',
+              name: 'framework',
+              test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|next|@next)[\\/]/,
+              priority: 40,
+              enforce: true,
+            },
+            lib: {
               test: /[\\/]node_modules[\\/]/,
-              name(module) {
-                // get the name. E.g. node_modules/packageName/not/this/part.js
-                // or node_modules/packageName
-                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-                // npm package names are URL-safe, but some servers don't like @ symbols
-                return `vendor.${packageName.replace('@', '')}`;
+              chunks: 'all',
+              name(module, chunks) {
+                return `lib-${chunks[0].name}`
+              },
+              priority: 30,
+            },
+            commons: {
+              name: 'commons',
+              minChunks: 2,
+              priority: 20,
+            },
+            shared: {
+              name(chunks) {
+                return `shared-${chunks[0].name}`
               },
               priority: 10,
-              reuseExistingChunk: true,
-            },
-            common: {
               minChunks: 2,
-              priority: -10,
               reuseExistingChunk: true,
             },
           },
