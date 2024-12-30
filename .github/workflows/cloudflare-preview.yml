@@ -5,6 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 permissions:
+  actions: read
   contents: read
   deployments: write
   pull-requests: write
@@ -13,23 +14,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy Preview
-    env:
-      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     
     steps:
-      # First checkout the base branch
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.sha }}
+          ref: ${{ github.event.pull_request.head.sha }}
           
-      # Then checkout the PR branch
-      - name: Checkout PR
-        run: |
-          git remote add fork ${{ github.event.pull_request.head.repo.clone_url }}
-          git fetch fork ${{ github.event.pull_request.head.ref }}
-          git checkout -b pr-${{ github.event.pull_request.number }} fork/${{ github.event.pull_request.head.ref }}
-      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -59,22 +49,11 @@ jobs:
           NODE_ENV: production
 
       - name: Deploy to Cloudflare Pages
-        run: |
-          pnpm add -D wrangler@latest
-          BRANCH_NAME=pr-${{ github.event.pull_request.number }}
-          npx wrangler pages deploy .next \
-            --project-name=admincraftwiki \
-            --branch="$BRANCH_NAME" \
-            --commit-dirty=true
-          echo "PREVIEW_URL=https://$BRANCH_NAME.admincraftwiki.pages.dev" >> $GITHUB_ENV
-
-      - name: Comment Preview URL
-        uses: actions/github-script@v7
+        uses: andykenward/github-actions-cloudflare-pages@v2.3.2
         with:
-          script: |
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.name,
-              issue_number: context.issue.number,
-              body: `✨ Preview deployment is ready!\n\n${process.env.PREVIEW_URL}`
-            });
+          cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          cloudflare-project-name: admincraftwiki
+          directory: .next
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-environment: 'Preview'
