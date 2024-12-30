@@ -41,7 +41,7 @@ Forge is a modded server (and API) that allows for the use of mods on your serve
 Unlike Paper, it contains **no optimizations** and is often very laggy when on larger modpacks.
 
 <Card href="https://files.minecraftforge.net/net/minecraftforge/forge/" title="Download">
-  Download a copy of Forge via [minecraftforge.net](https://files.minecraftforge.net/net/minecraftforge/forge/).
+  Download a copy of Forge via [minecraftforge.net](https://files.minecraftforge.net/).
 </Card>
 
 ### NeoForge
@@ -72,18 +72,18 @@ The server software detailed below all uses Bukkit in some shape or form.
 ### CraftBukkit
 CraftBukkit is a slightly modified version of the [Vanilla](#vanilla) server software, allowing it to run Bukkit plugins.\
 It also adds many more configurable options and features which Vanilla does not have whatsoever.\
-Additionally, it is more optimized that Vanilla making it less laggy and fixes certain known Vanilla bugs, errors and exploits.\
+Additionally, it is more optimized that Vanilla making it less laggy and fixes certain known Vanilla bugs, errors and exploits.
 
-<Card href="https://www.spigotmc.org/wiki/buildtools//" title="Download">
+<Card href="https://www.spigotmc.org/wiki/buildtools/" title="Download">
   To legally obtain CraftBukkit, you must compile it yourself with BuildTools via [spigotmc.org](https://www.spigotmc.org/).
   Click here to download BuildTools and learn how to use it.
 </Card>
 
 ### Spigot
 Spigot is a fork of CraftBukkit that adds many more improvement and some optimizations, making it far better than CraftBukkit.\
-However it does not contain *many* optimizations and their plugin API is notorious for being slowly updated and not as extensive as Paper's API.\
+However it does not contain *many* optimizations and their plugin API is notorious for being slowly updated and not as extensive as Paper's API.
 
-<Card href="https://www.spigotmc.org/wiki/buildtools//" title="Download">
+<Card href="https://www.spigotmc.org/wiki/buildtools/" title="Download">
   To legally obtain Spigot, you must compile it yourself with BuildTools via [spigotmc.org](https://www.spigotmc.org/).
   Click here to download BuildTools and learn how to use it.
 </Card>
@@ -247,4 +247,31 @@ However, Bungeecord is not as performant as Velocity and their API is not as ext
   Download a copy of the latest Waterfall proxy software via [papermc.io](https://papermc.io/).
 </Card>
 
-## TODO - TALK ABOUT NON-JAVA-BASED SOFTWARE SUCH AS PUMPKIN, VALENCE, ETC - Mention that they are not stable and should not be used in a production enviroment.
+## Non-Java Server Software
+Some individuals have created implementations of vanilla Minecraft in different programming languages.\
+This is often done to improve performance (to improve accessibility to those with lower-end hardware or reduce overall resource usage), or to add new features or APIs that do not exist in existing software.
+
+There are many non-Java server software available, however this section will mention the most developed and actively maintained software.
+
+<Cards>
+    <Card href="https://cuberite.org/" title = "Cuberite">
+      A C++ Minecraft Server implementation, designed with efficiency in mind.\
+      Has most features implemented and provides a flexible Lua Plugin API.
+    </Card>
+    <Card href="https://github.com/Pumpkin-MC/Pumpkin" title = "Pumpkin">
+      A Minecraft Server built entirely in rust.\
+      Has many features implemented and is highly performant.
+    </Card>
+    <Card href="https://github.com/ObsidianMC/Obsidian" title = "Obsidian">
+      An implementation of the Minecraft server protocol in C#.\
+      Has several implemented features, with a custom plugin framework.
+    </Card>
+    <Card href="https://github.com/ferrumc-rs/ferrumc" title = "FerrumC">
+      A Minecraft Server built in Rust.\
+      A relatively new project aiming to be a drop-in replacement for Vanilla, with an extensive API.
+    </Card>
+</Cards>
+
+<Callout type="warn" title="Warning">
+  Most of these server softwares should not be used in a production environment, as they are may contain bugs, exploits and unfinished features.
+</Callout>
