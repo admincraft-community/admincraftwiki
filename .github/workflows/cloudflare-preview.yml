@@ -1,7 +1,7 @@
 name: Cloudflare Pages Preview Deployment
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
 
 jobs:
@@ -14,7 +14,10 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
-      
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
