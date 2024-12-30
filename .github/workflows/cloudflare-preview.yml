@@ -8,6 +8,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy Preview
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     
     steps:
       - uses: actions/checkout@v4
@@ -53,10 +56,10 @@ jobs:
         run: pnpm add -D wrangler@latest
         
       - name: Deploy to Cloudflare Pages
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: pnpm wrangler pages deploy .next --project-name=admincraftwiki --branch=${{ github.head_ref }}
+        run: |
+          echo "Using token: ${CLOUDFLARE_API_TOKEN:0:5}... (masked for security)"
+          echo "Using account: $CLOUDFLARE_ACCOUNT_ID"
+          npx wrangler pages deploy .next --project-name=admincraftwiki --branch=${{ github.head_ref }}
           
       - name: Get Preview URL
         id: preview-url
