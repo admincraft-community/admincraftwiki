@@ -51,6 +51,15 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
           NODE_ENV: production
           
+      - name: Debug Git Info
+        run: |
+          echo "github.sha: ${{ github.sha }}"
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.head_ref: ${{ github.head_ref }}"
+          echo "github.event.pull_request.head.sha: ${{ github.event.pull_request.head.sha }}"
+          git branch
+          git rev-parse HEAD
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
@@ -58,6 +67,6 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: admincraftwiki
           directory: .next
-          branch: ${{ github.head_ref }}
+          branch: ${{ github.sha }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           wranglerVersion: '3'
