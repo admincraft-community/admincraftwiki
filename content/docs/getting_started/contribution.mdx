@@ -1,8 +1,9 @@
 ---
 title: How to Contribute
 description: A comprehensive guide to contributing to our documentation
-icon: HomeIcon
 ---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 # How to Contribute
 
@@ -15,12 +16,29 @@ Before starting your contribution journey, please familiarize yourself with our 
 ## Quick Start Guide
 
 <Steps>
-1. Fork the repository from [admincraft-community/admincraftwiki](https://github.com/admincraft-community/admincraftwiki)
-2. Clone your fork: `git clone https://github.com/YOUR-USERNAME/admincraftwiki.git`
-3. Create a new branch: `git checkout -b feature/your-feature-name`
-4. Make your changes following our documentation guidelines
-5. Test your changes locally
-6. Submit a pull request with a clear description of your changes
+  <Step>
+  Fork the repository from [admincraft-community/admincraftwiki](https://github.com/admincraft-community/admincraftwiki).
+  </Step>
+
+  <Step>
+  Clone your fork: `git clone https://github.com/YOUR-USERNAME/admincraftwiki.git`.
+  </Step>
+
+  <Step>
+  Create a new branch: `git checkout -b feature/your-feature-name`.
+  </Step>
+
+  <Step>
+  Make your changes following our documentation guidelines.
+  </Step>
+
+  <Step>
+  Test your changes locally.
+  </Step>
+
+  <Step>
+  Submit a pull request with a clear description of your changes.
+  </Step>
 </Steps>
 
 ## Development Environment Setup
@@ -145,12 +163,18 @@ import { InlineTOC } from '@/components/ui/inline-toc'
 Create guided tutorials:
 
 ```mdx
-import { Steps } from '@/components/ui/steps'
+import { Steps, Step } from '@/components/ui/steps'
 
 <Steps>
-1. First step description
-2. Second step description
-3. Third step description
+  <Step>
+    First step description
+  </Step>
+  <Step>
+    Second step description
+  </Step>
+  <Step>
+    Third step description
+  </Step>
 </Steps>
 ```
 
@@ -162,15 +186,15 @@ Highlight important information:
 
 ```mdx
 <Callout type="info" title="Note">
-  Important information goes here
+  Important information goes here.
 </Callout>
 
 <Callout type="warning">
-  Warning message goes here
+  Warning message goes here.
 </Callout>
 
 <Callout type="error">
-  Error message goes here
+  Error message goes here.
 </Callout>
 ```
 
@@ -185,7 +209,7 @@ Display content in card format:
     href="/docs/getting-started"
     icon={<BookOpenIcon />}
   >
-    Learn the basics of our platform
+    Learn the basics of our platform!
   </Card>
 </Cards>
 ```
@@ -246,46 +270,46 @@ Each directory should contain a `_meta.json` file to define the section structur
 ### Markdown Conventions
 
 - Use ATX-style headers (`#` for h1, `##` for h2, etc.)
-- Include a single space after header markers
-- Use backticks for inline code and triple backticks for code blocks
-- Use reference-style links for better maintainability
-- Include alt text for all images
+- Include a single space after header markers.
+- Use backticks for inline code and triple backticks for code blocks.
+- Use reference-style links for better maintainability.
+- Include alt text for all images.
 
 ### Component Usage Best Practices
 
 1. **Headings**
-   - Use sentence case for titles
-   - Include descriptive slugs
+   - Use sentence case for titles.
+   - Include descriptive slugs.
    - Keep hierarchy logical (don't skip levels)
 
 2. **Code Blocks**
-   - Always specify the language
-   - Use line highlighting when helpful
-   - Include copy buttons for longer snippets
+   - Always specify the language.
+   - Use line highlighting when helpful.
+   - Include copy buttons for longer snippets.
 
 3. **Callouts**
    - Use appropriate types (info, warning, error)
-   - Keep content concise
-   - Include titles when beneficial
+   - Keep content concise.
+   - Include titles when beneficial.
 
 ## Pull Request Process
 
 1. **Preparation**
-   - Update your fork to the latest upstream changes
-   - Run tests locally
-   - Ensure all links work
-   - Check for spelling and grammar
+   - Update your fork to the latest upstream changes.
+   - Run tests locally.
+   - Ensure all links work.
+   - Check for spelling and grammar.
 
 2. **Submission**
-   - Fill out the pull request template completely
-   - Include screenshots for visual changes
-   - Link to related issues
-   - Add labels as appropriate
+   - Fill out the pull request template completely.
+   - Include screenshots for visual changes.
+   - Link to related issues.
+   - Add labels as appropriate.
 
 3. **Review Process**
-   - Respond to reviewer feedback promptly
-   - Make requested changes in new commits
-   - Squash commits before final merge
+   - Respond to reviewer feedback promptly.
+   - Make requested changes in new commits.
+   - Squash commits before final merge.
 
 <Callout type="info" title="Documentation Preview">
 All pull requests automatically generate a preview deployment. Check the PR comments for the preview URL.
@@ -295,19 +319,19 @@ All pull requests automatically generate a preview deployment. Check the PR comm
 
 ### Writing Style
 
-- Use active voice
-- Keep sentences concise
-- Break up long paragraphs
-- Use consistent terminology
-- Include examples for complex concepts
+- Use active voice.
+- Keep sentences concise.
+- Break up long paragraphs.
+- Use consistent terminology.
+- Include examples for complex concepts.
 
 ### Code Examples
 
-- Follow our coding standards
-- Include comments for clarity
-- Show both basic and advanced usage
-- Provide working examples
-- Include error handling
+- Follow our coding standards.
+- Include comments for clarity.
+- Show both basic and advanced usage.
+- Provide working examples.
+- Include error handling.
 
 ## Community Guidelines
 
@@ -317,7 +341,7 @@ All pull requests automatically generate a preview deployment. Check the PR comm
     href="/community/code-of-conduct"
     icon={<ShieldIcon />}
   >
-    Review our community standards and expectations
+    Review our community standards and expectations.
   </Card>
   
   <Card 
@@ -325,14 +349,14 @@ All pull requests automatically generate a preview deployment. Check the PR comm
     href="/community/support"
     icon={<LifeBuoyIcon />}
   >
-    Find help with your contributions
+    Find help with your contributions.
   </Card>
 </Cards>
 
 ## Additional Resources
 
 - [Fumadocs Documentation](https://fumadocs.vercel.app/)
-- [AdminCraft Wiki Repository](https://github.com/admincraft-community/admincraftwiki)
+- [Admincraft Wiki Repository](https://github.com/admincraft-community/admincraftwiki)
 - [MDX Documentation](https://mdxjs.com/)
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
