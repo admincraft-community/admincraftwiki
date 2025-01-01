@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         variant="rainbow" 
         id="admincraft-welcome"
       >
-        Welcome to AdminCraft Wiki! This is a community-driven Minecraft server administration guide. Feel free to contribute!
+        Welcome to the Admincraft Wiki! This is a community-driven Minecraft server administration guide. Feel free to contribute!
       </Banner>
       <DocsLayout tree={source.pageTree} {...baseOptions}>
         {children}

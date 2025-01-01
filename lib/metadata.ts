@@ -8,7 +8,7 @@ export function createMetadata(override: Metadata): Metadata {
       description: override.description ?? undefined,
       url: 'https://admincraft.wiki',
       images: '/banner.png',
-      siteName: 'AdminCraft Wiki',
+      siteName: 'Admincraft Wiki',
       ...override.openGraph,
     }
   };

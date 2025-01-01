@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 const footerLinks = [
-  { href: '/docs/contribute', label: 'Contribute' },
+  { href: '/docs/getting_started/contribution', label: 'Contribute' },
   { href: '/docs/code-of-conduct', label: 'Code of Conduct' },
   { href: '/docs/license', label: 'License' }
 ] as const;
