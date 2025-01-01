@@ -1,5 +1,6 @@
 {
     "title": "Setting up your Server",
     "icon": "Server",
+    "index": "index",
     "pages": ["server-software"]
 }

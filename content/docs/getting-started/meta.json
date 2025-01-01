@@ -1,5 +1,6 @@
 {
     "title": "Getting Started",
     "icon": "House",
+    "index": "index",
     "pages": ["howtoask", "contribution"]
 }

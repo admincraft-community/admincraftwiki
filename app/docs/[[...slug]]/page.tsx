@@ -11,7 +11,7 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { FolderIcon, FileIcon, MessageCircleIcon, UsersIcon, LifeBuoyIcon, GitPullRequestIcon, ShieldIcon, BookOpenText, Server } from 'lucide-react';
+import { FolderIcon, FileIcon, MessageCircleIcon, UsersIcon, LifeBuoyIcon, GitPullRequestIcon, ShieldIcon, BookOpenText, Server,Copyright,Scroll } from 'lucide-react';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { TypeTable } from '@/components/tyep-table-auto';
 
@@ -76,6 +76,8 @@ export default async function Page(props: {
           TypeTable,
           Server,
           BookOpenText,
+          Scroll,
+          Copyright,
           Accordions,
           LifeBuoyIcon,
           ShieldIcon,
