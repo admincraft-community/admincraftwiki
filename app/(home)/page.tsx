@@ -189,7 +189,7 @@ export default function HomePage() {
               Admincraft Wiki is maintained by volunteers. Consider supporting us to help keep the resources free and up-to-date.
             </p>
             <Button variant="outline" className="flex items-center gap-2 mx-auto" asChild>
-              <a href="https://github.com/sponsors/admincraft" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/admincraft-community" target="_blank" rel="noopener noreferrer">
                 <HeartIcon className="h-5 w-5" />
                 Sponsor on GitHub
               </a>
