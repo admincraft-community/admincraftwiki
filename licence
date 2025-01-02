@@ -1,106 +1,532 @@
-# Admincraft Wiki License
+=======================================================================
 
-## You are free to:
-- **Share** — Copy and redistribute the content within the Admincraft Wiki project
-- **Adapt** — Remix, transform, and build upon the content for the Admincraft Wiki  
-- **Contribute** — Submit new content and improvements to the project
+                    Admincraft Wiki Public License
+                        Version 1.0, 2024
 
-These freedoms apply as long as you follow the license terms outlined below.
+=======================================================================
 
-## Under the following terms:
+                           NOTICE
 
-### 1. Attribution
-You must provide appropriate attribution:
-- Include the original creator's name
-- Link to the specific content on Admincraft Wiki (https://admincraft.wiki)
-- Indicate if you have modified the content
-- Use a reasonable method of attribution that does not suggest endorsement
-- Maintain all existing attribution notices
+The Admincraft Wiki project ("Admincraft") is not a law firm and does not 
+provide legal services. Distribution of this license does not create any 
+professional relationship. Admincraft provides this license and related 
+information on an "as-is" basis. Admincraft makes no warranties regarding 
+this license or any material licensed under its terms and disclaims all 
+liability for damages resulting from its use.
 
-### 2. Non-Commercial
-The content may not be used for commercial purposes, including but not limited to:
-- Selling or monetizing the content
-- Using the content in commercial products or services
-- Using the content for advertising or promotional materials
-- Generating revenue directly or indirectly from the content
+This license is specifically designed to protect and govern content within 
+the Admincraft Wiki project while ensuring proper attribution and preventing 
+unauthorized commercial use.
 
-### 3. Project Bound
-All content and code must remain within the Admincraft Wiki project:
-- Content cannot be copied to other websites or platforms
-- Documentation cannot be republished outside the project
-- The project's code, design, and technical implementation cannot be reused
-- Modifications must be submitted through official project channels
-- Content must remain accessible through Admincraft Wiki
+                        License Overview
 
-### 4. ShareAlike
-When modifying or building upon the material:
-- All contributions become part of the Admincraft Wiki project
-- Modified content must be distributed under this same license
-- Changes must maintain the spirit and purpose of the original content
-- Contributions cannot impose additional restrictions on others
-- All new content must follow project guidelines and standards
+This license governs:
+1. Content contributions to the Admincraft Wiki
+2. Usage of project materials
+3. Rights and obligations of contributors
+4. Restrictions on content usage
+5. Technical implementation protections
+6. Attribution requirements
+7. Commercial use restrictions
 
-### 5. Specific Restrictions
-You may not:
-- Remove or alter any license or copyright notices
-- Bypass technical measures protecting the content
-- Create derivative works outside the project
-- Sublicense the content or grant additional rights
-- Use the content in a way that suggests endorsement
+Contributors should carefully review all terms before submitting content, as
+contributions are irrevocable and become permanently part of the project.
 
-## Original Content
-Specific rules for original content:
-- Original creators retain moral rights to their contributions
-- Content remains permanently part of the Admincraft Wiki project
-- Contributors cannot withdraw their content from the project
-- The project maintains the right to update or modify content
-- All contributions must enhance the project's educational mission
+=======================================================================
 
-## Usage Context
-This license specifically protects:
-- Written documentation and guides
-- Code examples and configurations
-- Project structure and organization
-- Design elements and layouts
-- Community contributions and modifications
+Section 1 -- Detailed Definitions
 
-## Legal Notices
-1. No Warranty: This content is provided "as is" without warranty of any kind, express or implied.
+  a. "Adapted Material" refers to any content that is derived from or 
+     based upon existing content within the Admincraft Wiki project, 
+     including but not limited to:
+     
+     1. Translations of existing content
+     2. Modifications to existing guides
+     3. Updates to documentation
+     4. Expansions of tutorials
+     5. Revisions of technical content
+     6. Reformatted versions of existing content
+     7. Combined or merged content pieces
 
-2. Limitation of Liability: Neither the project nor its contributors will be liable for any damages or claims arising from the use of this content.
+  b. "Content" encompasses all materials within the project, specifically:
+     
+     1. Written Materials:
+        - Documentation
+        - Guides
+        - Tutorials
+        - How-to articles
+        - Technical explanations
+        - Reference materials
+     
+     2. Technical Content:
+        - Code examples
+        - Configuration files
+        - Command references
+        - Technical diagrams
+        - Implementation examples
+     
+     3. Visual Elements:
+        - Diagrams
+        - Illustrations
+        - Charts
+        - Graphs
+        - Technical drawings
+     
+     4. Structural Elements:
+        - Navigation systems
+        - Categories
+        - Tags
+        - Organization schemes
+        - Content hierarchies
 
-3. Additional Rights: This license does not affect:
-  - Fair use rights
-  - The original contributor's moral rights
-  - Rights others may have in the content
-  - Rights that are granted by applicable law
+  c. "Contributor" means any individual or entity that:
+     
+     1. Submits new content to the project
+     2. Modifies existing content
+     3. Provides technical implementations
+     4. Creates supporting materials
+     5. Develops project infrastructure
 
-4. Compliance: Failure to comply with this license automatically terminates your rights under it.
+  d. "Original Content" must meet ALL of the following criteria:
+     
+     1. Completeness:
+        - Self-contained and comprehensive
+        - Independently valuable
+        - Fully developed topic coverage
+        
+     2. Originality:
+        - Created entirely by the contributor
+        - Not derived from existing content
+        - Not translated from other sources
+        - Not compiled from other materials
+        
+     3. Substantiality:
+        - Represents significant intellectual effort
+        - Provides meaningful value
+        - Contains detailed information
+        - Demonstrates expertise or research
+        
+     4. Independence:
+        - Stands alone as valuable content
+        - Not dependent on other content
+        - Complete in its coverage
+        
+     Examples of Original Content:
+     - Complete new guide on an undocumented topic
+     - Original technical tutorial series
+     - New comprehensive documentation section
+     - Original technical illustrations or diagrams
+     - Novel implementation examples
+     
+     Examples of Non-Original Content:
+     - Minor edits to existing pages
+     - Formatting changes
+     - Translation of existing content
+     - Reorganization of existing material
+     - Small additions to existing guides
+     - Updates to outdated information
+     - Style or grammar improvements
 
+  e. "Project" encompasses:
+     
+     1. Digital Properties:
+        - Main website (admincraft.wiki)
+        - Associated domains
+        - Development repositories
+        - Content management systems
+        
+     2. Technical Infrastructure:
+        - Servers
+        - Databases
+        - Code repositories
+        - Development tools
+        - Deployment systems
+        
+     3. Content Systems:
+        - Documentation platform
+        - Content management tools
+        - Version control systems
+        - Collaboration tools
+        
+     4. Community Infrastructure:
+        - Contribution systems
+        - Review processes
+        - Communication channels
+        - Development workflows
 
-## Important Notice About "Your Content"
+  f. "Technical Implementation" includes:
+     
+     1. Software Components:
+        - Source code
+        - Scripts
+        - Applications
+        - Plugins
+        - Extensions
+        
+     2. System Architecture:
+        - Database schemas
+        - API designs
+        - System interfaces
+        - Integration methods
+        
+     3. Development Assets:
+        - Build systems
+        - Deployment configurations
+        - Development tools
+        - Testing frameworks
+        
+     4. Technical Documentation:
+        - Implementation guides
+        - API documentation
+        - System specifications
+        - Technical requirements
 
-### Definition of Original Content
-To be clear about what constitutes "your content" under this license:
+  g. "You" refers to any individual or entity:
+     
+     1. Using project content
+     2. Contributing to the project
+     3. Modifying existing content
+     4. Accessing technical implementations
+     5. Interacting with project systems
 
-- "Your content" refers ONLY to substantial original work that you have created entirely yourself
-- Making minor edits, small changes, or formatting adjustments to existing content does NOT make it "your content"
-- Translating existing content does NOT make it "your content"
+Section 2 -- Detailed Scope and Permissions
 
-### Examples of what is NOT "your content":
-- Making minor edits to existing guides
-- Reformatting or restructuring existing content
-- Adding a few lines to an existing guide
-- Fixing typos or errors
-- Updating outdated information
-- Adding small sections to existing content
-- Translating existing content to another language
+  a. License Grant Details
 
-### Examples of what IS "your content":
-- Writing a completely new guide from scratch
-- Creating entirely new documentation on an undocumented topic
-- Writing substantial new sections that stand on their own
-- Creating original diagrams or technical illustrations
-- Writing original tutorials or how-to guides
+     1. Permitted Activities:
+        
+        a. Content Usage Within Project:
+           - Reading and referencing content
+           - Following technical guides
+           - Implementing described solutions
+           - Using provided examples
+           
+        b. Content Contribution:
+           - Submitting new materials
+           - Creating documentation
+           - Developing guides
+           - Writing tutorials
+           
+        c. Content Modification:
+           - Updating existing content
+           - Improving documentation
+           - Expanding guides
+           - Enhancing tutorials
+           
+        d. Internal Sharing:
+           - Using project channels
+           - Following contribution processes
+           - Participating in reviews
+           - Collaborating with others
 
-The intent of this clarification is to ensure that contributors understand they cannot claim rights to existing content by making minor modifications. Only substantial, original contributions qualify as "your content" under this license.
+     2. Explicit Restrictions:
+        
+        a. External Usage:
+           - No copying to other platforms
+           - No republishing elsewhere
+           - No external distribution
+           - No commercial applications
+           
+        b. Technical Limitations:
+           - No copying implementation
+           - No reusing system design
+           - No duplicating architecture
+           - No reproducing features
+           
+        c. Commercial Restrictions:
+           - No monetization
+           - No commercial products
+           - No paid services
+           - No commercial adaptation
+
+  b. Original Content Rights Details
+
+     1. Contributor Rights:
+        
+        a. Moral Rights Retention:
+           - Attribution maintenance
+           - Reputation protection
+           - Integrity preservation
+           - Recognition rights
+           
+        b. Usage Rights:
+           - Implementation examples
+           - Technical demonstrations
+           - Educational purposes
+           - Portfolio inclusion
+           
+        c. Modification Rights:
+           - Content updates
+           - Error corrections
+           - Improvement suggestions
+           - Enhancement proposals
+
+     2. Project Rights:
+        
+        a. Content Management:
+           - Organization authority
+           - Format standardization
+           - Quality maintenance
+           - Integration control
+           
+        b. Modification Authority:
+           - Update implementation
+           - Error correction
+           - Enhancement application
+           - Format standardization
+           
+        c. Distribution Control:
+           - Access management
+           - Availability control
+           - Distribution methods
+           - Platform decisions
+
+Section 3 -- Detailed Conditions
+
+  a. Attribution Requirements
+
+     1. Required Elements:
+        
+        a. Creator Information:
+           - Full contributor name
+           - Username or handle
+           - Contribution date
+           - Role or capacity
+           
+        b. Source References:
+           - Original URL
+           - Project reference
+           - Version information
+           - Modification dates
+           
+        c. Modification Notices:
+           - Change descriptions
+           - Update information
+           - Revision history
+           - Contributor lists
+           
+        d. Standard Formats:
+           - Project templates
+           - Style guidelines
+           - Format requirements
+           - Layout standards
+
+     2. Implementation Details:
+        
+        a. Display Requirements:
+           - Visible placement
+           - Clear presentation
+           - Complete information
+           - Proper formatting
+           
+        b. Technical Implementation:
+           - Metadata inclusion
+           - System integration
+           - Database records
+           - Version tracking
+
+  b. Project Bound Conditions
+
+     1. Content Management:
+        
+        a. Storage Requirements:
+           - Central repository
+           - Version control
+           - Backup systems
+           - Access controls
+           
+        b. Access Methods:
+           - Official channels
+           - Authorized platforms
+           - Approved interfaces
+           - Sanctioned tools
+           
+        c. Format Standards:
+           - Document templates
+           - Style guidelines
+           - Technical formats
+           - Presentation rules
+
+     2. Prohibited Activities:
+        
+        a. External Distribution:
+           - No unauthorized copying
+           - No external hosting
+           - No unauthorized mirrors
+           - No independent platforms
+           
+        b. Technical Reproduction:
+           - No system duplication
+           - No architecture copying
+           - No feature replication
+           - No implementation cloning
+
+Section 4 -- Commercial Usage Restrictions
+
+  a. Prohibited Commercial Activities
+
+     1. Direct Commercial Use:
+        
+        a. Content Sales:
+           - No direct selling
+           - No content licensing
+           - No subscription access
+           - No paid distributions
+           
+        b. Product Integration:
+           - No commercial products
+           - No paid services
+           - No premium features
+           - No monetized applications
+           
+        c. Marketing Usage:
+           - No advertising materials
+           - No promotional content
+           - No marketing campaigns
+           - No commercial presentations
+
+     2. Indirect Commercial Use:
+        
+        a. Revenue Generation:
+           - No affiliate programs
+           - No sponsored content
+           - No monetized links
+           - No commercial partnerships
+           
+        b. Business Usage:
+           - No commercial training
+           - No paid consulting
+           - No business services
+           - No corporate products
+
+  b. Permitted Non-Commercial Activities
+
+     1. Educational Use:
+        
+        a. Teaching:
+           - Classroom instruction
+           - Educational programs
+           - Training materials
+           - Learning resources
+           
+        b. Research:
+           - Academic studies
+           - Technical research
+           - Educational analysis
+           - Learning projects
+
+     2. Personal Use:
+        
+        a. Individual Learning:
+           - Self-education
+           - Skill development
+           - Personal projects
+           - Individual study
+           
+        b. Professional Development:
+           - Skill improvement
+           - Knowledge acquisition
+           - Career development
+           - Technical growth
+
+  a. License Duration
+
+     1. Term Specifics:
+        - Perpetual within project
+        - Continues until violation
+        - Remains with content
+        - Survives modifications
+
+     2. Termination Triggers:
+        - License violations
+        - Terms breaches
+        - Unauthorized use
+        - Commercial exploitation
+
+  b. Termination Effects
+
+     1. Immediate Consequences:
+        - Rights cessation
+        - Access restriction
+        - Usage prohibition
+        - Distribution halt
+
+     2. Continuing Obligations:
+        - Attribution maintenance
+        - Content preservation
+        - Records retention
+        - Compliance documentation
+
+Section 6 -- Comprehensive Warranties and Liability
+
+  a. Warranty Disclaimer
+
+     THE PROJECT AND ALL CONTENT ARE PROVIDED "AS IS" WITHOUT ANY 
+     WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR 
+     OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF:
+
+     1. MERCHANTABILITY
+     2. FITNESS FOR PARTICULAR PURPOSE
+     3. NON-INFRINGEMENT
+     4. ACCURACY OR COMPLETENESS
+     5. PRESENCE OR ABSENCE OF ERRORS
+     6. COMPLIANCE WITH STANDARDS
+     7. SECURITY
+     8. RELIABILITY
+     9. CURRENTNESS
+     10. COMPATIBILITY
+
+  b. Liability Limitations
+
+     1. Excluded Damages:
+        - Direct damages
+        - Indirect damages
+        - Consequential damages
+        - Incidental damages
+        - Special damages
+        - Punitive damages
+        - Exemplary damages
+
+     2. Limited Recovery:
+        - No monetary claims
+        - No equitable relief
+        - No injunctive relief
+        - No specific performance
+
+Section 7 -- Additional Terms and Conditions
+
+  a. Severability
+
+     1. Term Independence:
+        - Individual enforcement
+        - Separate interpretation
+        - Independent application
+        - Distinct consideration
+
+     2. Reformation Process:
+        - Minimum modification
+        - Intent preservation
+        - Purpose maintenance
+        - Effect continuation
+
+  b. Complete Agreement
+
+     1. Integration Clause:
+        - Entire agreement
+        - Complete understanding
+        - Full terms
+        - Total conditions
+
+     2. Amendment Process:
+        - Written modifications
+        - Official updates
+        - Formal changes
+        - Authorized revisions
+
+=======================================================================
+
+                    Contact and Information
+
+For questions, clarifications, or additional information about this
+license, please contact the Admincraft Wiki project team through
+official channels.
