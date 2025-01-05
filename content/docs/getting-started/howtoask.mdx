@@ -1,14 +1,10 @@
 ---
 title: How to Ask Good Questions
-description: A comprehensive guide to getting better answers faster in tech communities
+description: Getting help effectively is a skill that can dramatically speed up your problem-solving process. This guide will help you craft questions that get better answers faster.
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Card, Cards } from "fumadocs-ui/components/card";
-
-# How to Ask Good Questions
-
-Getting help effectively is a skill that can dramatically speed up your problem-solving process. This guide will help you craft questions that get better answers faster.
 
 <Callout type="info" title="The Golden Rule">
 The quality of answers you receive often directly reflects the effort you put into asking your question. Well-structured questions show respect for others' time and expertise.
@@ -19,64 +15,54 @@ The quality of answers you receive often directly reflects the effort you put in
 <Steps>
 <Step>
 Search existing resources thoroughly:
+- Community forums and FAQs
 - Official documentation
-- Community forums and discussions
-- Stack Overflow and similar platforms
-- GitHub issues
-- Error message searches
+- Previously asked questions
+- Tutorial videos and guides
+- Related discussion threads
 </Step>
 
 <Step>
 Gather essential information:
-- Complete error messages
-- Relevant code snippets
-- System/environment details
-- Steps to reproduce
+- Specific details about your situation
+- Error messages or issues (if any)
+- Your current setup
+- Steps to reproduce the problem
 - Things you've already tried
 </Step>
 
 <Step>
-Prepare your development environment:
-- Create a minimal reproduction
-- Document your setup
-- Collect relevant logs
+Prepare your evidence:
 - Take screenshots if needed
+- Collect relevant logs
+- Document your setup
+- Create examples of the issue
 </Step>
 </Steps>
 
-## Crafting Your Question
-
-### Structure Template
+## Question Structure Template
 
 ```markdown
-## Problem Description
-[One sentence summary of the issue]
-
-## Environment
-- OS: [Your OS]
-- Version: [Software version]
-- Related Dependencies: [List relevant ones]
-
-## What I'm Trying to Do
+## What I Want to Achieve
 [Clear explanation of your goal]
 
+## Current Setup
+[Describe your relevant environment/situation]
+
+## The Problem
+[What isn't working or what you need help with]
+
 ## What I've Tried
-[List your attempts]
+[List your previous attempts]
 
-## Current Result
-[What's happening now]
+## Specific Questions
+[Your actual questions]
 
-## Expected Result
-[What you want to happen]
-
-## Error Messages
-[Complete error text]
-
-## Code/Configuration
-[Minimal reproduction code]
+## Additional Information
+[Any other relevant details]
 ```
 
-### Common Patterns to Avoid
+## Common Mistakes to Avoid
 
 <Cards>
 <Card title="❌ The Help Vampire">
@@ -87,91 +73,322 @@ Bad:
 "Is this the right place to ask?"
 
 Good:
-"Getting NullPointerException in Spring Boot app when accessing /api/users endpoint. Stack trace and controller code below. Already checked @Autowired dependencies."
+"Need help setting up permissions for WorldGuard regions on my Minecraft server. Already checked documentation and tried basic flags. Details below."
 </Card>
 
 <Card title="❌ The Fragment Bomber">
 Bad:
 Message 1: "Hi"
-Message 2: "I have an error"
-Message 3: "In my React app"
-Message 4: "When I try to update state"
+Message 2: "I have a problem"
+Message 3: "With my server"
+Message 4: "It keeps crashing"
 
 Good:
-"React useState not updating component state immediately. useEffect dependency array includes state variable. Component code and debugging attempts below."
+"Server crashes on startup after installing EssentialsX. Latest crash log and server details provided below. Already checked for plugin conflicts."
 </Card>
 
-<Card title="❌ The Solution Seeker">
+<Card title="❌ The Solution Assumers">
 Bad:
-"How do I use regex to parse HTML?"
+"How do I edit the config.yml?"
 
 Good:
-"Need to extract specific data from HTML. Considered regex but open to better approaches. Example HTML and desired output below."
+"Looking to change spawn protection radius. Found config.yml but unsure which settings to modify. Current server settings listed below."
 </Card>
 </Cards>
 
-## Question Components
+## Topic-Specific Examples
 
-### Essential Elements
+<Accordions>
+<Accordion title="Minecraft Server - Plugin Issue" id="minecraft-plugin">
+✅ Good Example:
+"EssentialsX economy not syncing with ShopGUI+. Server details:
+- Paper 1.19.2
+- EssentialsX 2.19.7
+- ShopGUI+ 2.2.0
+- 4GB RAM
+- Hosting: [Provider name]
+
+Steps tried:
+- Verified permissions
+- Checked config compatibility
+- Tested in clean environment
+- Reviewed latest logs
+
+Specific logs and config files provided below."
+</Accordion>
+
+<Accordion title="Minecraft Server - Performance" id="minecraft-performance">
+✅ Good Example:
+"Experiencing TPS drops during peak hours (20 players online). Server specs:
+- Dedicated server (4 cores, 16GB RAM)
+- Paper 1.20.1
+- Pre-generated world
+- View distance: 8
+- No-tracking range: 48
+
+Timings report: [link]
+Top laggy chunks from spark: [details]
+Already optimized garbage collection and pre-generated chunks."
+</Accordion>
+
+<Accordion title="Game Modding - Compatibility" id="modding">
+✅ Good Example:
+"Fabric mod crash with latest Minecraft version 1.20.1. Details:
+- Mod version: 2.1.0
+- Fabric API: 0.14.21
+- Java version: 17
+- Other installed mods listed below
+
+Crash report shows NullPointerException in custom renderer.
+Already tried:
+- Clean installation
+- Updated all dependencies
+- Tested without other mods
+- Checked GitHub issues"
+</Accordion>
+
+<Accordion title="Discord Bot - Commands" id="discord-bot">
+✅ Good Example:
+"Custom slash command not registering in my Discord bot. Setup:
+- discord.js v14.11.0
+- Node.js 16.9.0
+- Command registration code below
+- Bot has applications.commands scope
+- Bot has admin permissions
+
+Error occurs during command deployment.
+Already verified:
+- Command structure matches API requirements
+- Bot token is correct
+- Guild ID is correct
+- Intents are properly set"
+</Accordion>
+
+<Accordion title="Game Server - Networking" id="game-networking">
+✅ Good Example:
+"Players unable to connect to CS:GO community server. Setup:
+- Server location: Frankfurt
+- GSLT token active
+- Required ports forwarded (27015-27020 TCP/UDP)
+- Server visible in browser
+- Error message: Connection failed after 4 retries
+
+Tested:
+- Firewall configurations
+- Different ports
+- Direct IP connection
+- Steam query response
+- Server command configurations"
+</Accordion>
+
+<Accordion title="Linux Server - System Performance" id="linux-server">
+✅ Good Example:
+"High CPU usage spikes on Ubuntu 22.04 LTS web server. Environment:
+- CPU: 8 cores
+- RAM: 32GB
+- Storage: 500GB SSD
+- Load Average: 8.5, 7.2, 6.8
+- Running NGINX 1.18.0
+- PHP-FPM 8.1
+- MariaDB 10.6
+
+Current Monitoring:
+- top shows php-fpm workers at 100% CPU
+- iostat indicates low I/O wait
+- sa-update running during spikes
+- dmesg shows no hardware errors
+
+Attempted Solutions:
+- Adjusted PHP-FPM pool settings
+- Optimized MariaDB configuration
+- Implemented Redis caching
+- Updated kernel parameters
+- Reviewed all cron jobs
+
+Relevant logs and configs:
+/var/log/syslog excerpt: [...]
+/etc/php/8.1/fpm/pool.d/www.conf: [...]
+top output: [...]"
+</Accordion>
+
+<Accordion title="Windows Server - Active Directory" id="windows-server">
+✅ Good Example:
+"LDAP authentication failing after domain controller upgrade. Environment:
+- Windows Server 2022 Standard
+- Domain Functional Level: 2016
+- 2 Domain Controllers
+- Forest Functional Level: 2016
+- Recently updated from Server 2019
+
+Error Details:
+- Event ID 1011: LDAP server disconnected
+- Replication showing USN mismatch
+- DCDIAG reports DNS errors
+- Sites and Services shows healthy connections
+
+Current State:
+- DNS resolution functioning
+- Network connectivity verified
+- FSMO roles properly assigned
+- Schema master accessible
+- Time sync confirmed across DCs
+
+Troubleshooting Done:
+- Verified DNS records
+- Checked forest/domain trust relationships
+- Analyzed replication metadata
+- Reviewed SYSVOL replication
+- Tested authentication from multiple clients
+
+Logs:
+Directory Service log: [...]
+System log relevant entries: [...]
+DCDIAG output: [...]"
+</Accordion>
+
+<Accordion title="Programming - React Performance" id="react-dev">
+✅ Good Example:
+"React application experiencing significant performance degradation in production. Setup:
+- React 18.2.0
+- Next.js 13.4.7
+- Node.js 18.16.0
+- Deployment: Vercel
+- Build size: 2.8MB (gzipped)
+
+Performance Metrics:
+- First Contentful Paint: 2.8s
+- Time to Interactive: 4.2s
+- Largest Contentful Paint: 3.5s
+- Cumulative Layout Shift: 0.12
+
+Component Structure:
+- Dynamic imports implemented
+- Using React.memo for heavy components
+- Context API for state management
+- Custom hooks for data fetching
+
+Optimization Attempts:
+- Implemented code splitting
+- Added image optimization
+- Enabled caching strategies
+- Reduced bundle size
+- Removed unused dependencies
+
+Profiler Output:
+Component render times: [...]
+Bundle analyzer report: [...]
+Lighthouse score: [...]"
+</Accordion>
+
+<Accordion title="Database - PostgreSQL Optimization" id="database">
+✅ Good Example:
+"Slow query performance on specific JOIN operations. Environment:
+- PostgreSQL 15.2
+- OS: Ubuntu 22.04
+- RAM: 64GB
+- CPU: 16 cores
+- Storage: NVMe SSD
+- Current active connections: ~200
+
+Query Details:
+```sql
+SELECT u.*, o.* 
+FROM users u 
+LEFT JOIN orders o ON u.id = o.user_id 
+WHERE o.status = 'pending' 
+  AND o.created_at > NOW() - INTERVAL '7 days'
+```
+
+Performance Stats:
+- Execution time: 15.2 seconds
+- Rows retrieved: 450,000
+- Sequential scans: 2
+- Table sizes:
+  - users: 2M rows
+  - orders: 15M rows
+
+Current Indexes:
+- users(id) PRIMARY KEY
+- orders(user_id) BTREE
+- orders(status, created_at) BTREE
+
+Attempted Solutions:
+- Vacuum/analyze on both tables
+- Adjusted work_mem to 16MB
+- Updated table statistics
+- Tested different JOIN methods
+- Implemented partition on orders table
+
+EXPLAIN ANALYZE output: [...]
+Current configuration: [...]
+Table statistics: [...]"
+</Accordion>
+
+<Accordion title="Game Development - Unity3D" id="unity-dev">
+✅ Good Example:
+"Frame rate drops in specific game scene with particle effects. Setup:
+- Unity 2022.3.4f1
+- Platform: Windows/DX11
+- Build: Development
+- Target frame rate: 60 FPS
+- Current frame rate: 15-20 FPS
+
+Scene Details:
+- Particle systems: 12
+- Active GameObjects: ~500
+- Lights: 3 point lights, 1 directional
+- Post-processing stack v2
+- Using URP 14.0.8
+
+Profiler Data:
+- CPU Main Thread: 45ms
+- GPU: 38ms
+- Physics: 12ms
+- Garbage Collection: 0.5ms/frame
+- Memory: 1.2GB used
+
+Optimization Attempts:
+- Implemented object pooling
+- Reduced particle count
+- Baked lighting
+- Used LODs for complex models
+- Optimized materials and textures
+
+Attached:
+- Profiler snapshot
+- Scene hierarchy
+- Build report
+- Graphics settings"
+</Accordion>
+</Accordions>
+
+## Essential Components
 
 <Cards>
 <Card title="Context">
-- Development environment details
-- Software versions and dependencies
-- Full error messages/logs
-- Relevant configuration files
-- System specifications when relevant
+- Server/client versions
+- Relevant plugins and mods
+- System specifications
+- Error messages/logs
+- Configuration details
 </Card>
 
 <Card title="Research Evidence">
-- Solutions already attempted
-- Documentation references checked
+- Solutions already tried
+- Documentation checked
 - Similar issues found
-- Why existing solutions didn't work
-- Debugging steps taken
+- Previous troubleshooting
+- Current workarounds
 </Card>
 
 <Card title="Problem Definition">
-- Clear problem statement
-- Expected vs actual behavior
-- Minimal reproducible example
-- Specific error messages
-- Clear end goal
+- Clear issue statement
+- Expected behavior
+- Current behavior
+- Reproduction steps
+- Specific goals
 </Card>
 </Cards>
-
-### Example: Good vs Bad Questions
-
-<Accordions>
-<Accordion title="Database Connection Issue" id="db-example">
-❌ Bad:
-"Help! Can't connect to database!"
-
-✅ Good:
-"PostgreSQL connection refused on AWS RDS instance. Application logs show connection timeout. Already verified:
-- Security group allows traffic on port 5432
-- Database is running and accepting local psql connections
-- Connection string format is correct
-- Similar issue in AWS docs didn't resolve problem
-
-Connection string (sanitized):
-postgresql://user:****@mydb.xxxxx.region.rds.amazonaws.com:5432/dbname"
-</Accordion>
-
-<Accordion title="API Integration Problem" id="api-example">
-❌ Bad:
-"API not working, please help"
-
-✅ Good:
-"REST API returns 403 when posting to /api/users. Using Bearer token authentication.
-- Token is valid (verified in JWT debugger)
-- GET requests work fine
-- Postman shows same error
-- Server logs show 'insufficient_scope'
-
-Request headers and body included below. Using axios 1.4.0 in React app."
-</Accordion>
-</Accordions>
 
 ## Following Up
 
@@ -179,16 +396,16 @@ Request headers and body included below. Using axios 1.4.0 in React app."
 
 <Cards>
 <Card title="During Discussion">
-- Respond promptly to questions
-- Provide requested information quickly
-- Stay engaged in the conversation
-- Be clear about testing results
+- Respond promptly
+- Test suggestions quickly
+- Provide clear feedback
+- Stay engaged
 </Card>
 
 <Card title="After Resolution">
-- Share the solution that worked
-- Mark issues as resolved
-- Thank helpers appropriately
+- Share the solution
+- Mark as resolved
+- Thank helpers
 - Document for others
 </Card>
 </Cards>
@@ -197,12 +414,34 @@ Request headers and body included below. Using axios 1.4.0 in React app."
 Always share what solved your problem, even if you figure it out yourself. Future searchers will thank you!
 </Callout>
 
-## Community Guidelines
+## Community Etiquette
 
-<Callout type="warn">
-Remember these key points:
-- Be patient and respectful
-- Provide feedback on suggested solutions
-- Update your question with new information
-- Accept that not all questions get immediate answers
+<Cards>
+<Card title="Be Patient">
+- Give helpers time to respond
+- Complex issues need research
+- Different timezones exist
+- Avoid repeat posting
+</Card>
+
+<Card title="Show Effort">
+- Research before asking
+- Format questions clearly
+- Provide requested info
+- Stay engaged in discussion
+</Card>
+
+<Card title="Be Respectful">
+- Thank people for help
+- Accept different approaches
+- Follow community rules
+- Help others when possible
+</Card>
+</Cards>
+
+<Callout type="warn" title="Remember">
+- Your question quality affects answer quality
+- Clear communication speeds up help
+- Documentation helps future users
+- Respect community guidelines
 </Callout>
