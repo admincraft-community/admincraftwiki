@@ -15,6 +15,8 @@ const footerLinks = [
 ] as const;
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const currentYear = new Date().getFullYear();
+
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
@@ -22,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer className="py-6 border-t border-border">
           <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 px-4">
             <p className="text-sm text-muted-foreground text-center sm:text-left">
-              © 2024 Admincraft Wiki. Made with ❤️ by{' '}
+              © {currentYear} Admincraft Wiki. Made with ❤️ by{' '}
               <a 
                 href="https://blstmo.com" 
                 target="_blank" 
