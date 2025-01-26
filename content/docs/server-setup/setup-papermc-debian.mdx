@@ -38,10 +38,40 @@ sudo useradd -r -m -U -d /opt/minecraft -s /bin/bash minecraft
 </Step>
 
 <Step>
+# Java Version Compatibility
+
+<Callout type="info" title="Version Compatibility">
+| Paper Version | Required Java Version |
+|--------------|----------------------|
+| 1.8 to 1.11 | Java 8 |
+| 1.12 to 1.16.4 | Java 11 |
+| 1.16.5 | Java 16 |
+| 1.17.1-1.18.1+ | Java 21 |
+</Callout>
+
 Install required dependencies:
-```bash
-sudo apt install openjdk-17-jre-headless screen curl -y
+
+<Tabs items={["1.17.1-1.18.1+", "1.16.5", "1.12-1.16.4", "1.8-1.11"]}>
+```bash tab
+# For Paper 1.17.1-1.18.1+
+sudo apt install openjdk-21-jre-headless screen curl -y
 ```
+
+```bash tab
+# For Paper 1.16.5
+sudo apt install openjdk-16-jre-headless screen curl -y
+```
+
+```bash tab
+# For Paper 1.12 to 1.16.4
+sudo apt install openjdk-11-jre-headless screen curl -y
+```
+
+```bash tab
+# For Paper 1.8 to 1.11
+sudo apt install openjdk-8-jre-headless screen curl -y
+```
+</Tabs>
 </Step>
 
 <Step>
@@ -229,7 +259,7 @@ sudo iptables-save
 ```bash
 java -version
 ```
-Should show Java 17 or newer
+Should show the correct Java version for your Paper version. See the compatibility chart below.
 
 2. Verify file permissions:
 ```bash
