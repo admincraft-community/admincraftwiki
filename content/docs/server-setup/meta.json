@@ -2,5 +2,5 @@
     "title": "Setting up your Server",
     "icon": "Server",
     "index": "index",
-    "pages": ["server-software"]
+    "pages": ["server-software","setup-papermc-debian"]
 }

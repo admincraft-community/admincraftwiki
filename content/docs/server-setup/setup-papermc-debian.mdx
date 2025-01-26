@@ -1,0 +1,284 @@
+---
+title: Setting Up Paper on Debian
+description: A step-by-step guide for installing and configuring a Paper Minecraft server on Debian systems
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { LifeBuoyIcon, BookOpenIcon, ShieldIcon } from 'lucide-react';
+
+# Setting Up Paper on Debian
+
+This guide will walk you through setting up a Paper Minecraft server on a Debian-based system. Paper is recommended for most server setups due to its excellent performance and plugin support.
+
+<Callout type="info" title="System Requirements">
+Before starting, ensure your system meets these minimum requirements:
+- Debian 11 or newer
+- At least 4GB RAM (8GB+ recommended for larger servers)
+- Root or sudo access
+- Stable internet connection
+</Callout>
+
+## Initial Setup
+
+<Steps>
+<Step>
+Update your system packages:
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+</Step>
+
+<Step>
+Create a dedicated user for the Minecraft server:
+```bash
+sudo useradd -r -m -U -d /opt/minecraft -s /bin/bash minecraft
+```
+</Step>
+
+<Step>
+Install required dependencies:
+```bash
+sudo apt install openjdk-17-jre-headless screen curl -y
+```
+</Step>
+
+<Step>
+Switch to the minecraft user:
+```bash
+sudo su - minecraft
+```
+</Step>
+</Steps>
+
+## Server Installation
+
+<Steps>
+<Step>
+Create and navigate to server directory:
+```bash
+mkdir ~/server
+cd ~/server
+```
+</Step>
+
+<Step>
+Download Paper server jar:
+```bash
+curl -o paper.jar "https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/126/downloads/paper-1.21.4-126.jar"
+```
+
+<Callout type="info" title="Direct Download">
+You can also download Paper directly from their website at [papermc.io/downloads/paper](https://papermc.io/downloads/paper)
+</Callout>
+</Step>
+
+<Step>
+Create a startup script:
+```bash
+nano start.sh
+```
+
+Add the following content:
+```bash
+#!/bin/bash
+
+# Calculate RAM allocation (adjust these values based on your server's needs)
+# For a dedicated server, allocate 75% of total RAM
+# For a shared server, allocate 50% of total RAM
+# Minimum: 2GB, Recommended: 4GB+
+
+# Example allocations:
+# 8GB Server: -Xms4G -Xmx6G
+# 16GB Server: -Xms8G -Xmx12G
+# 32GB Server: -Xms16G -Xmx24G
+
+java -Xms4G -Xmx6G \
+  -XX:+UseG1GC \
+  -XX:+ParallelRefProcEnabled \
+  -XX:MaxGCPauseMillis=200 \
+  -XX:+UnlockExperimentalVMOptions \
+  -XX:+DisableExplicitGC \
+  -XX:+AlwaysPreTouch \
+  -XX:G1NewSizePercent=30 \
+  -XX:G1MaxNewSizePercent=40 \
+  -XX:G1HeapRegionSize=8M \
+  -XX:G1ReservePercent=20 \
+  -XX:G1HeapWastePercent=5 \
+  -XX:G1MixedGCCountTarget=4 \
+  -XX:InitiatingHeapOccupancyPercent=15 \
+  -XX:G1MixedGCLiveThresholdPercent=90 \
+  -XX:G1RSetUpdatingPauseTimePercent=5 \
+  -XX:SurvivorRatio=32 \
+  -XX:+PerfDisableSharedMem \
+  -XX:MaxTenuringThreshold=1 \
+  -jar paper.jar --nogui
+```
+</Step>
+
+<Step>
+Make the startup script executable:
+```bash
+chmod +x start.sh
+```
+</Step>
+
+<Step>
+Start the server once to generate files:
+```bash
+./start.sh
+```
+</Step>
+
+<Step>
+Accept the EULA:
+```bash
+sed -i 's/false/true/g' eula.txt
+```
+</Step>
+
+<Step>
+Start the server in a screen session:
+```bash
+screen -S minecraft
+./start.sh
+```
+</Step>
+</Steps>
+
+## Server Management
+
+<Cards>
+<Card title="Screen Commands" icon={<BookOpenIcon />}>
+- Detach from session: Press `Ctrl + A`, then `D`
+- Attach to server console: `screen -r minecraft`
+- Create new session: `screen -S minecraft`
+- List sessions: `screen -ls`
+</Card>
+
+<Card title="Console Commands" icon={<BookOpenIcon />}>
+- Stop server: `stop`
+- List players: `list`
+- Give operator status: `op <username>`
+- Save world: `save-all`
+</Card>
+</Cards>
+
+## Backup Configuration
+
+<Accordions>
+<Accordion title="Setting Up Daily Backups" id="backups">
+1. Create a backup script (backup.sh):
+```bash
+#!/bin/bash
+MINECRAFT_DIR="/opt/minecraft/server"
+BACKUP_DIR="/opt/minecraft/backups"
+DATE=$(date +%Y%m%d_%H%M%S)
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Send save-all command to server
+screen -S minecraft -X stuff "save-all\n"
+# Wait for save to complete
+sleep 10
+
+# Create backup
+tar -czf "$BACKUP_DIR/server_backup_$DATE.tar.gz" "$MINECRAFT_DIR"
+
+# Keep only last 7 backups
+find "$BACKUP_DIR" -name "server_backup_*.tar.gz" -mtime +7 -delete
+```
+
+2. Make it executable and set up cron:
+```bash
+chmod +x backup.sh
+crontab -e
+```
+
+Add for daily 3 AM backups:
+```
+0 3 * * * /opt/minecraft/server/backup.sh
+```
+</Accordion>
+</Accordions>
+
+## Firewall Configuration
+
+<Accordions>
+<Accordion title="UFW Configuration" id="ufw">
+```bash
+sudo ufw allow 25565/tcp
+```
+</Accordion>
+
+<Accordion title="iptables Configuration" id="iptables">
+```bash
+sudo iptables -A INPUT -p tcp --dport 25565 -j ACCEPT
+sudo iptables-save
+```
+</Accordion>
+</Accordions>
+
+## Troubleshooting
+
+<Accordions>
+<Accordion title="Server Won't Start" id="start-issues">
+1. Check Java version:
+```bash
+java -version
+```
+Should show Java 17 or newer
+
+2. Verify file permissions:
+```bash
+ls -l paper.jar start.sh
+```
+Both should be executable
+
+3. Check logs:
+```bash
+cat logs/latest.log
+```
+</Accordion>
+
+<Accordion title="Connection Issues" id="connection-issues">
+1. Verify server is running:
+```bash
+screen -r minecraft
+```
+
+2. Check firewall status:
+```bash
+sudo ufw status
+```
+or
+```bash
+sudo iptables -L
+```
+
+3. Confirm server.properties port setting:
+```bash
+grep server-port server.properties
+```
+</Accordion>
+</Accordions>
+
+## Community Support
+
+<Cards>
+<Card title="Admincraft Community" icon={<LifeBuoyIcon />}>
+- [Admincraft Discord](https://discord.gg/9XYYJRBhUQ)
+- [r/admincraft Subreddit](https://www.reddit.com/r/admincraft/)
+</Card>
+
+<Card title="Official Documentation" icon={<ShieldIcon />}>
+- [PaperMC Documentation](https://docs.papermc.io/)
+- [Paper Configuration Guide](https://docs.papermc.io/paper/reference/configuration)
+</Card>
+</Cards>
+
+<Callout type="warn" title="Security Note">
+Always keep your system and Paper server up to date. Check [papermc.io](https://papermc.io) regularly for new releases.
+</Callout>
