@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
-import { baseOptions } from '@/app/layout.config';
+import { homeOptions } from '@/app/layout.config';
 import Head from 'next/head';
 
 export default function Layout({
@@ -35,7 +35,7 @@ export default function Layout({
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HomeLayout {...baseOptions}>{children}</HomeLayout>
+      <HomeLayout {...homeOptions}>{children}</HomeLayout>
     </>
   );
 }

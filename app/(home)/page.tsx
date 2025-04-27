@@ -158,7 +158,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="flex items-center gap-2" asChild>
-                  <a href="https://discord.gg/NFBPR7j8Aq" target="_blank" rel="noopener noreferrer">
+                  <a href="https://discord.gg/admincraft" target="_blank" rel="noopener noreferrer">
                     <DiscordLogoIcon className="h-5 w-5" />
                     Join Discord
                   </a>
@@ -240,15 +240,9 @@ export default function HomePage() {
             </p>
             <div className="flex justify-center gap-4">
               <Button variant="default" className="flex items-center gap-2" asChild>
-                <a href="https://github.com/admincraft-community" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/admincraft-community/admincraftwiki" target="_blank" rel="noopener noreferrer">
                   <GitHubLogoIcon className="h-5 w-5" />
                   Star on GitHub
-                </a>
-              </Button>
-              <Button variant="outline" className="flex items-center gap-2" asChild>
-                <a href="https://github.com/admincraft-community" target="_blank" rel="noopener noreferrer">
-                  <HeartIcon className="h-5 w-5" />
-                  Become a Sponsor
                 </a>
               </Button>
             </div>
